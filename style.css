@@ -29,6 +29,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+.juego-card img {
+    max-width: 200px;
+    height: auto;
+}
+
 .juego-card {
     background: black;
     border-radius: 8px;

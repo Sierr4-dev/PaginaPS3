@@ -13,25 +13,27 @@
         </div>
     </header>
 
-    <nav id="menu-principal" class="menu-visual">
-        <div class="menu-item">
-            <a href="#gta-rev">
-                <img src="img/gta-rev.jpg" alt="GTA RE:V 2025">
-                <span>GTA RE:V 2025</span>
-            </a>
-        </div>
-        <div class="menu-item">
-            <a href="#futuros-proyectos">
-                <img src="img/proyectos.jpg" alt="Proyectos Futuros">
-                <span>Proyectos Futuros</span>
-            </a>
-        </div>
-    </nav>
+    <div id="contenedor-principal">
+        <!-- Menú Principal -->
+        <nav id="menu-principal" class="menu-visual activo">
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="mostrarSeccion('gta-rev')">
+                    <img src="img/gta-rev.jpg" alt="GTA RE:V 2025">
+                    <span>GTA RE:V 2025</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="javascript:void(0)" onclick="mostrarSeccion('futuros-proyectos')">
+                    <img src="img/proyectos.jpg" alt="Proyectos Futuros">
+                    <span>Proyectos Futuros</span>
+                </a>
+            </div>
+        </nav>
 
-    <main>
+        <!-- Sección GTA REV -->
         <section id="gta-rev" class="seccion-contenido">
             <div class="volver-container">
-                <a href="#" class="boton-volver">← Volver al Menú Principal</a>
+                <a href="javascript:void(0)" onclick="volverAlMenu()" class="boton-volver">← Volver al Menú Principal</a>
             </div>
             <h2>Descargas REV</h2>
             <div class="juego-card">
@@ -59,9 +61,10 @@
             </div>
         </section>
 
+        <!-- Sección Proyectos Futuros -->
         <section id="futuros-proyectos" class="seccion-contenido">
             <div class="volver-container">
-                <a href="#" class="boton-volver">← Volver al Menú Principal</a>
+                <a href="javascript:void(0)" onclick="volverAlMenu()" class="boton-volver">← Volver al Menú Principal</a>
             </div>
             <h2>Proyectos Futuros</h2>
             <div class="proyecto-card">
@@ -69,27 +72,37 @@
                 <p>Nuevos proyectos en desarrollo...</p>
             </div>
         </section>
-    </main>
+    </div>
 
     <footer>
         <p>© 2025 Sierr4's PS3 Center</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuPrincipal = document.getElementById('menu-principal');
+        function mostrarSeccion(seccionId) {
+            // Ocultar el menú principal
+            document.getElementById('menu-principal').style.display = 'none';
             
-            function checkSection() {
-                if(window.location.hash) {
-                    menuPrincipal.style.display = 'none';
-                } else {
-                    menuPrincipal.style.display = 'flex';
-                }
+            // Ocultar todas las secciones
+            var secciones = document.getElementsByClassName('seccion-contenido');
+            for(var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = 'none';
             }
+            
+            // Mostrar la sección seleccionada
+            document.getElementById(seccionId).style.display = 'block';
+        }
 
-            window.addEventListener('hashchange', checkSection);
-            checkSection();
-        });
+        function volverAlMenu() {
+            // Ocultar todas las secciones
+            var secciones = document.getElementsByClassName('seccion-contenido');
+            for(var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = 'none';
+            }
+            
+            // Mostrar el menú principal
+            document.getElementById('menu-principal').style.display = 'flex';
+        }
     </script>
 </body>
 </html>

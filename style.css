@@ -69,10 +69,6 @@ header {
     margin: 0 auto;
 }
 
-.seccion-contenido:target {
-    display: block;
-}
-
 /* Botón volver */
 .volver-container {
     margin-bottom: 2rem;

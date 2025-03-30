@@ -79,25 +79,30 @@
     </footer>
 
     <script>
-        // Asegurarse que el menú principal esté visible al inicio
-        document.getElementById('menu-principal').style.display = 'flex';
-
         function mostrarSeccion(seccionId) {
             // Ocultar menú principal
-            document.getElementById('menu-principal').style.display = 'none';
+            var menu = document.getElementById('menu-principal');
+            menu.style.cssText = 'display: none !important';
             
             // Mostrar la sección seleccionada
-            document.getElementById(seccionId).style.display = 'block';
+            var seccion = document.getElementById(seccionId);
+            seccion.style.cssText = 'display: block !important';
         }
 
         function volverAlMenu() {
             // Ocultar todas las secciones
-            document.getElementById('gta-rev').style.display = 'none';
-            document.getElementById('futuros-proyectos').style.display = 'none';
+            var gtarev = document.getElementById('gta-rev');
+            var futuros = document.getElementById('futuros-proyectos');
+            gtarev.style.cssText = 'display: none !important';
+            futuros.style.cssText = 'display: none !important';
             
             // Mostrar el menú principal
-            document.getElementById('menu-principal').style.display = 'flex';
+            var menu = document.getElementById('menu-principal');
+            menu.style.cssText = 'display: flex !important';
         }
+
+        // Asegurarse que el menú principal esté visible al inicio
+        volverAlMenu();
     </script>
 </body>
 </html>

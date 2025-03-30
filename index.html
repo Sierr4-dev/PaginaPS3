@@ -79,20 +79,12 @@
     </footer>
 
     <script>
-        // Al cargar la página, asegurarse que el menú principal esté visible
-        window.onload = function() {
-            volverAlMenu();
-        };
+        // Asegurarse que el menú principal esté visible al inicio
+        document.getElementById('menu-principal').style.display = 'flex';
 
         function mostrarSeccion(seccionId) {
-            // Ocultar el menú principal
+            // Ocultar menú principal
             document.getElementById('menu-principal').style.display = 'none';
-            
-            // Ocultar todas las secciones
-            var secciones = document.getElementsByClassName('seccion-contenido');
-            for(var i = 0; i < secciones.length; i++) {
-                secciones[i].style.display = 'none';
-            }
             
             // Mostrar la sección seleccionada
             document.getElementById(seccionId).style.display = 'block';
@@ -100,15 +92,11 @@
 
         function volverAlMenu() {
             // Ocultar todas las secciones
-            var secciones = document.getElementsByClassName('seccion-contenido');
-            for(var i = 0; i < secciones.length; i++) {
-                secciones[i].style.display = 'none';
-            }
+            document.getElementById('gta-rev').style.display = 'none';
+            document.getElementById('futuros-proyectos').style.display = 'none';
             
-            // Mostrar el menú principal y asegurarse que use flex
-            var menuPrincipal = document.getElementById('menu-principal');
-            menuPrincipal.style.display = 'flex';
-            menuPrincipal.style.visibility = 'visible';
+            // Mostrar el menú principal
+            document.getElementById('menu-principal').style.display = 'flex';
         }
     </script>
 </body>

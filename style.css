@@ -7,10 +7,21 @@ body {
     color: white;
 }
 
+/* Header y Logo */
 header {
     background-color: #1a1a1a;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
     padding: 1rem;
-    text-align: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
 }
 
 /* Menú visual */
@@ -62,6 +73,25 @@ header {
     display: block;
 }
 
+/* Botón volver */
+.volver-container {
+    margin-bottom: 2rem;
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-volver:hover {
+    background-color: #444;
+}
+
 /* Tarjetas de juegos */
 .juego-card {
     background-color: #1a1a1a;
@@ -105,4 +135,9 @@ footer {
     padding: 1rem;
     background-color: #1a1a1a;
     margin-top: 2rem;
+}
+
+/* Asegurarse que el menú principal sea flex por defecto */
+#menu-principal {
+    display: flex;
 }

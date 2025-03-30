@@ -7,10 +7,13 @@
 </head>
 <body>
     <header>
-        <h1>DESCARGAS</h1>
+        <div class="header-content">
+            <img src="img/logo.png" alt="Logo del Canal" class="logo">
+            <h1>DESCARGAS</h1>
+        </div>
     </header>
 
-    <nav class="menu-visual">
+    <nav id="menu-principal" class="menu-visual">
         <div class="menu-item">
             <a href="#gta-rev">
                 <img src="img/gta-rev.jpg" alt="GTA RE:V 2025">
@@ -27,6 +30,9 @@
 
     <main>
         <section id="gta-rev" class="seccion-contenido">
+            <div class="volver-container">
+                <a href="#" class="boton-volver">← Volver al Menú Principal</a>
+            </div>
             <h2>Descargas REV</h2>
             <div class="juego-card">
                 <h3>RE:V BLES</h3>
@@ -54,6 +60,9 @@
         </section>
 
         <section id="futuros-proyectos" class="seccion-contenido">
+            <div class="volver-container">
+                <a href="#" class="boton-volver">← Volver al Menú Principal</a>
+            </div>
             <h2>Proyectos Futuros</h2>
             <div class="proyecto-card">
                 <h3>Próximamente</h3>
@@ -65,5 +74,22 @@
     <footer>
         <p>© 2025 Sierr4's PS3 Center</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuPrincipal = document.getElementById('menu-principal');
+            
+            function checkSection() {
+                if(window.location.hash) {
+                    menuPrincipal.style.display = 'none';
+                } else {
+                    menuPrincipal.style.display = 'flex';
+                }
+            }
+
+            window.addEventListener('hashchange', checkSection);
+            checkSection();
+        });
+    </script>
 </body>
 </html>

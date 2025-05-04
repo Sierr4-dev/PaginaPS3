@@ -22,12 +22,6 @@
                     <span>GTA RE:V 2025</span>
                 </a>
             </div>
-            <div class="menu-item">
-                <a href="javascript:void(0)" onclick="mostrarSeccion('futuros-proyectos')">
-                    <img src="img/proyectos.jpg" alt="Proyectos Futuros">
-                    <span>Proyectos Futuros</span>
-                </a>
-            </div>
         </nav>
 
         <!-- Sección GTA REV -->
@@ -60,18 +54,6 @@
                 <a href="https://www.mediafire.com/file/00g3vpddd4rlvdu/update.rpf/file" class="boton-descarga">Descargar update.rpf</a>
             </div>
         </section>
-
-        <!-- Sección Proyectos Futuros -->
-        <section id="futuros-proyectos" class="seccion-contenido">
-            <div class="volver-container">
-                <a href="javascript:void(0)" onclick="volverAlMenu()" class="boton-volver">← Volver al Menú Principal</a>
-            </div>
-            <h2>Proyectos Futuros</h2>
-            <div class="proyecto-card">
-                <h3>Próximamente</h3>
-                <p>Nuevos proyectos en desarrollo...</p>
-            </div>
-        </section>
     </div>
 
     <footer>
@@ -92,9 +74,7 @@
         function volverAlMenu() {
             // Ocultar todas las secciones
             var gtarev = document.getElementById('gta-rev');
-            var futuros = document.getElementById('futuros-proyectos');
             gtarev.style.cssText = 'display: none !important';
-            futuros.style.cssText = 'display: none !important';
             
             // Mostrar el menú principal
             var menu = document.getElementById('menu-principal');
@@ -106,3 +86,4 @@
     </script>
 </body>
 </html>
+
